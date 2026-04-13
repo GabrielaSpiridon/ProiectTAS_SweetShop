@@ -1,5 +1,5 @@
-Proiect TAS - Testarea Automată a Sistemelor Software
-Site vizat: Sweet Shop
+#**Proiect TAS - Testarea Automată a Sistemelor Software**
+#Site vizat: Sweet Shop
 
 📝 Descrierea Proiectului
 Acest proiect are ca scop demonstrarea competențelor de asigurare a calității software (QA) prin aplicarea mai multor tipuri de testare pe o aplicație web de tip e-commerce. Proiectul acoperă întreg ciclul de viață al testării, de la planificare și proiectarea cazurilor de testare, până la execuție și raportarea bug-urilor.
