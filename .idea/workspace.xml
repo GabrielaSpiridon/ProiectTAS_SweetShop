@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a1269af5-5b6f-4e73-a720-f390686ea31a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/java/runner/TestRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/java/stepDefinitions/BasketSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/java/stepDefinitions/CheckoutSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/java/stepDefinitions/LoginSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/resources/features/basket.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/resources/features/checkout.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/resources/features/login.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Testare_Functionala/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Testare_Functionala/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testare_Functionala/src/test/java/stepDefinitions/BasketSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/java/stepDefinitions/EmptyBasketSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testare_Functionala/src/test/java/stepDefinitions/CheckoutSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/java/stepDefinitions/CheckoutSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testare_Functionala/src/test/resources/features/basket.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/resources/features/emptyBasket.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testare_Functionala/src/test/resources/features/checkout.feature" beforeDir="false" afterPath="$PROJECT_DIR$/Testare_Functionala/src/test/resources/features/checkout.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testare_Functionala/target/cucumber-reports.html" beforeDir="false" afterPath="$PROJECT_DIR$/Testare_Functionala/target/cucumber-reports.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Testare_Functionala/target/test-classes/features/basket.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +38,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Cucumber Java.Feature: checkout.executor": "Run",
     "JUnit.BasketTest.executor": "Run",
     "JUnit.EmptyBasketTest.executor": "Run",
     "JUnit.LoginTest.executor": "Run",

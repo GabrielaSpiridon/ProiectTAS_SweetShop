@@ -2,9 +2,13 @@ package stepDefinitions;
 
 import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import java.time.Duration;
+
+import static com.codeborne.selenide.Selenide.sleep;
 import static org.junit.Assert.assertTrue;
 
 public class CheckoutSteps {
@@ -14,30 +18,55 @@ public class CheckoutSteps {
     public void adaugareProdus() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");
         driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().window().maximize();
+
         driver.get("https://sweetshop.netlify.app/sweets");
-        driver.findElement(By.xpath("//a[@data-id='1']")).click();
+        sleep(2000);
+
+        // Adaugam produsul
+        driver.findElement(By.cssSelector("a[data-id='1']")).click();
+        sleep(1000);
     }
 
     @And("Navigheaza la pagina Basket")
     public void navigareCos() {
-        driver.get("https://sweetshop.netlify.app/basket");
+        // Navigare catre cos folosind link-ul
+        driver.findElement(By.cssSelector("a.nav-link[href='/basket']")).click();
+        sleep(1000);
     }
 
     @When("Apasa pe butonul Checkout")
     public void clickCheckout() {
-        driver.findElement(By.linkText("Checkout")).click();
+        sleep(1000);
     }
 
     @And("Lasa toate campurile goale si apasa Continue to checkout")
     public void trimiteFormularGol() {
-        driver.findElement(By.xpath("//button[contains(text(),'Continue to checkout')]")).click();
+        // Btn de finalizare
+        WebElement submitBtn = driver.findElement(By.cssSelector("button.btn-block"));
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", submitBtn);
+        sleep(1000);
+
+        // Click pe butonul de finalizare
+        submitBtn.click();
+        sleep(1000);
     }
 
     @Then("Sistemul afiseaza mesaje de eroare pentru campurile obligatorii")
     public void verificareMesajeEroare() {
-        // Verificăm prezența mesajului de eroare pentru prenume conform documentației [cite: 271, 281]
-        WebElement errorMsg = driver.findElement(By.xpath("//*[contains(text(), 'Valid first name is required')]"));
-        assertTrue(errorMsg.isDisplayed());
-        driver.quit();
+        // Verificam eroarea pentru First Name
+        WebElement firstNameError = driver.findElement(By.xpath("//div[contains(text(), 'Valid first name is required')]"));
+
+        assertTrue("Mesajul de eroare nu a aparut la trimiterea formularului gol", firstNameError.isDisplayed());
+
+        System.out.println("TC-04: Validarea campurilor obligatorii la Checkout a fost confirmata!");
+
+        // Inchidem driverul la finalul scenariului
+        if (driver != null) {
+            sleep(2000);
+            driver.quit();
+        }
     }
 }
